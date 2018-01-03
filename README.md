@@ -68,7 +68,7 @@ This works.
 
 ## N.B.
 
-The super obnoxious prompt is intensional.
+The super obnoxious prompt is intensional; the British spelling of intentional is not.
 
 ## Getting Out
 
