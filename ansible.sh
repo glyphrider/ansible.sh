@@ -14,6 +14,7 @@ function aws_common {
 
   # add the ansible-playbook alias that uses all the environment variables
   alias ansible-playbook='docker run -ti --rm -v /etc/passwd:/etc/passwd -v /etc/group:/etc/group --user $(id -u):$(id -g) -v ${SSH_AUTH_SOCK}:${SSH_AUTH_SOCK} -e SSH_AUTH_SOCK=${SSH_AUTH_SOCK} -v ${ANSIBLE_PLAYBOOK}:/playbook -w /playbook -e HOME=/tmp -e AWS_ACCESS_KEY_ID=${AWS_ACCESS_KEY_ID} -e AWS_SECRET_ACCESS_KEY=${AWS_SECRET_ACCESS_KEY} -e AWS_REGION=${AWS_REGION} ${ANSIBLE_DOCKER_IMAGE_TAG}'
+  which notify-send >> /dev/null && [[ -n "${DISPLAY}" ]] && notify-send --urgency=low --icon=terminal ${AWS_ACCOUNT} "ansible-playbook alias is ready"
 }
 
 function prompt_effect {
