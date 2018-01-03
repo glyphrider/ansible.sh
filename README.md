@@ -47,6 +47,29 @@ Restart bash (`exec $SHELL`). If you are not using bash as your default shell, t
 
 A quick check of `alias` will show a new alias for each of your ~/.ansible-key._environment-name_ files. Each alias will match _environment-name_ and will setup ansible to use your new environment.
 
+## Exciting Environment Variables that you can change while in the SHELL
+
+`AWS_REGION` defaults to `us-east-1`, but you can set it at any time so your commands will execute in a different region.
+
+`ANSISBLE_PLAYBOOK` defaults to the value in the ~/.ansible_playbook file. However, you can use it to point to an alternate playbook directory.
+
+**You cannot use the cool shell shortcut to set the environment variables on the same commandline as `ansible-playbook`**
+
+`AWS_REGION=us-east-2 ansible-playbook blah` **does not work**
+
+This is because the environment variables are interpretted/expanded before they are reset. Shell magic.
+
+```bash
+AWS_REGION=us-east-2
+ansible-playbook blah
+```
+
+This works.
+
+## N.B.
+
 The super obnoxious prompt is intensional.
+
+## Getting Out
 
 To stop using ansible, just `exit` the shell.
