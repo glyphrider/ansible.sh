@@ -51,7 +51,7 @@ A quick check of `alias` will show a new alias for each of your ~/.ansible-key._
 
 `AWS_REGION` defaults to `us-east-1`, but you can set it at any time so your commands will execute in a different region.
 
-`ANSISBLE_PLAYBOOK` defaults to the value in the ~/.ansible_playbook file. However, you can use it to point to an alternate playbook directory.
+`ANSIBLE_PLAYBOOK` defaults to the value in the ~/.ansible_playbook file. However, you can use it to point to an alternate playbook directory.
 
 **You cannot use the cool shell shortcut to set the environment variables on the same commandline as `ansible-playbook`**
 
