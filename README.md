@@ -18,7 +18,7 @@ echo 'source ~/work/ansible.sh/ansible.sh' >> ~/.bashrc
 You will need to identify your ansible playbook location. If, for example, you have your playbook(s) in the directory `~/work/ansible_plays`, then you would configure this with the following:
 
 ```bash
-echo 'ANSIBLE_PLAYBOOK=~/work/ansible_plays' > ~./ansible_playbook
+echo 'export ANSIBLE_PLAYBOOK=~/work/ansible_plays' > ~/.ansible_playbook
 ```
 
 If you don't configure your ansible playbook, then the script will attempt to do that the first time it runs. It will try to find a directory that is a git repository with a remote that matches `VHTx/ansible_deployment`. If you have such directory, then this value will be set for you automatically.
@@ -51,7 +51,7 @@ A quick check of `alias` will show a new alias for each of your ~/.ansible-key._
 
 `AWS_REGION` defaults to `us-east-1`, but you can set it at any time so your commands will execute in a different region.
 
-`ANSISBLE_PLAYBOOK` defaults to the value in the ~/.ansible_playbook file. However, you can use it to point to an alternate playbook directory.
+`ANSIBLE_PLAYBOOK` defaults to the value in the ~/.ansible_playbook file. However, you can use it to point to an alternate playbook directory.
 
 **You cannot use the cool shell shortcut to set the environment variables on the same commandline as `ansible-playbook`**
 
